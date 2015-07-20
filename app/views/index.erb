@@ -5,12 +5,12 @@
   <p class="small">Written at <%= post.timestamp %></p>
   <p><%= post.content.split.first(25).join (" ") %></p>
   <p><em class="small">
-  <% if post.comments.count == 0 %>
+  <% if post.comments.size == 0 %>
   <%= "No comments yet" %>
-  <% elsif post.comments.count == 1 %>
-  <%= "#{post.comments.count} Comment" %>
+  <% elsif post.comments.size == 1 %>
+  <%= "#{post.comments.size} Comment" %>
   <% else %>
-  <%= "#{post.comments.count} Comments" %>
+  <%= "#{post.comments.size} Comments" %>
   <% end %></em></p>
   <hr>
   <% end %>
