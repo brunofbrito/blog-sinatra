@@ -4,7 +4,7 @@
   <h2><a href="/show/<%= post.id %>"><%= post.title %></a></h2>
   <p class="small">Written at <%= post.timestamp %></p>
   <p><%= post.content.split.first(25).join (" ") %></p>
-  <p class="small"><em><%= @comments %> comments</em></p>
+  <p><em class="small"><%= "#{post.comments.count} Comments" %> </em></p>
   <hr>
   <% end %>
   <a href="/new/">Create new post</a>
