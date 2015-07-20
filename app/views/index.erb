@@ -1,8 +1,9 @@
 <h1 class="text-center text-uppercase">My Amazing Blog</h1>
 
 <% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <p><%= post.content %></p>
+  <h2><a href="/show/<%= post.id %>"><%= post.title %></a></h2>
+  <p class="small">Written on <%= post.created_at %></p>
+  <p><%= post.content.split.first(25).join (" ") %></p>
   <hr>
   <% end %>
-<a href="/new/">Create new post</a>
+  <a href="/new/">Create new post</a>

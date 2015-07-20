@@ -15,3 +15,8 @@ post "/new/" do
   post.save
   redirect "/"
 end
+
+get "/show/:id" do
+  @post = Post.find(params[:id])
+  erb :show
+end
