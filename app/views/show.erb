@@ -1,3 +1,21 @@
 <h1><%= @post.title %></h1>
 <p class="small">Written on <%= @post.created_at %></p>
 <p><%= @post.content %></p>
+<hr>
+<h3>Let me know if you liked my article in the comment section below!</h3>
+<hr>
+<h4>Showing comments</h4>
+<% @comments.each do |comment| %>
+<h4><%= comment.title %></h4>
+<p><%= comment.content %><p>
+<% end %>
+<hr>
+<h4>Add a comment</h4>
+<form class="user-form" action="/comment/new/<%= @post.id %>" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="comment-title" placeholder="Add a title to your comment" class="form-control" >
+    <label for="content">Content</label>
+    <textarea rows="5" name="content" id="content" placeholder="Content goes here" class="form-control" ></textarea>
+    <br>
+    <button type="submit" class="btn btn-info">Add Comment</button>
+  </form>
