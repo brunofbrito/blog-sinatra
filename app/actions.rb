@@ -3,10 +3,9 @@ class Post
     created_at.strftime("%l:%M%P (%d/%m/%Y)")
   end
 
-
   def count
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.count(params[:comment])
+    @comment = @post.comments.size(params[:comment])
   end
 
 end

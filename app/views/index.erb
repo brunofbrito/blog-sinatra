@@ -4,7 +4,14 @@
   <h2><a href="/show/<%= post.id %>"><%= post.title %></a></h2>
   <p class="small">Written at <%= post.timestamp %></p>
   <p><%= post.content.split.first(25).join (" ") %></p>
-  <p><em class="small"><%= "#{post.comments.count} Comments" %> </em></p>
+  <p><em class="small">
+  <% if post.comments.count == 0 %>
+  <%= "No comments yet" %>
+  <% elsif post.comments.count == 1 %>
+  <%= "#{post.comments.count} Comment" %>
+  <% else %>
+  <%= "#{post.comments.count} Comments" %>
+  <% end %></em></p>
   <hr>
   <% end %>
   <a href="/new/">Create new post</a>
