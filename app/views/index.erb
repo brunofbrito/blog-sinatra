@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+<h1 class="text-center text-uppercase">My Amazing Blog</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <hr>
+  <% end %>
+<a href="/new/">Create new post</a>
