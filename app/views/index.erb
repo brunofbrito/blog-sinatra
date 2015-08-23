@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
   <h2><a href="/show/<%= post.id %>"><%= post.title %></a></h2>
   <p class="small">Written at <%= post.timestamp %></p>
-  <p><%= post.content.split.first(25).join (" ") %></p>
+  <p><% unless post.content.nil? then post.content.split.first(25).join (" ") end %></p>
   <p><em class="small">
   <% if post.comments.size == 0 %>
   <%= "No comments yet" %>
@@ -13,5 +13,5 @@
   <%= "#{post.comments.size} Comments" %>
   <% end %></em></p>
   <hr>
-  <% end %>
+<% end %>
   <a href="/new/">Create new post</a>
